@@ -1,0 +1,30 @@
+{
+ "name": "FiveThirtyEight 2016 Election Status Icon",
+ "short_name": "FiveThirtyEight Election Icon",
+ "manifest_version": 2,
+ "version": "0.0.7",
+ "description": "Gives the top-line \"Polls Plus\" forecast from Nate Silver's FiveThirtyEight.com.",
+ "options_ui": {
+  "page": "options.html",
+  "chrome_style": true
+ },
+ "browser_action": {
+  "default_icon": {
+   "38": "question.png"
+  },
+  "default_title": "Election Prediction",
+  "default_popup": "popup.html"
+ },
+ "background": {
+  "scripts": ["bground.js"]
+ },
+ "permissions": [ "storage", "https://projects.fivethirtyeight.com/" ],
+ "icons": {
+   "128": "538-128.png"
+ },
+ "applications": {
+  "gecko": {
+   "id": "{2dac8f48-8bfc-4afe-88e5-6f60dc0a5992}"
+  }
+ }
+}
