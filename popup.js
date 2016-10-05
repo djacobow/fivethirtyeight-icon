@@ -1,3 +1,19 @@
+function percentify(val) {
+    var rounded = Math.round(val*10);
+    var tens   = Math.floor(rounded / 100).toString();
+    if (tens == '0') tens = ' ';
+    rounded -= tens * 100;
+    var ones   = Math.floor(rounded /  10);
+    rounded -= ones * 10;
+    var tenths = Math.floor(rounded /   1);
+    // return Math.round(val*10)/10).toString() + '%';
+    return tens.toString() + 
+           ones.toString() + 
+           '.' +
+           tenths.toString() +
+           '%';
+};
+
 function createTable(d,where) {
       
       models = {
@@ -24,6 +40,7 @@ function createTable(d,where) {
       var cell = row.insertCell(cc++);
       cell.colSpan = 1 + Object.keys(models).length;
       cell.innerHTML = 'Probability of Winning as of ' + date + '<br><br>';
+      cell.className = 'headingcell';
       cc = 0; 
 
       row = t.insertRow(rc++);
@@ -44,7 +61,8 @@ function createTable(d,where) {
         for (var model in models) {
           var cell = row.insertCell(cc++);
           var val = d['latest'][party]['models'][model]['winprob'];
-          cell.innerHTML = (Math.round(val*10)/10).toString() + '%';
+          cell.className = 'numbercell';
+          cell.innerHTML = percentify(val);
         }
       }
 

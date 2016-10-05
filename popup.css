@@ -14,13 +14,65 @@ div.tablediv {
 }
 
 table {
+ border: none;
  border-collapse: collapse;
 }
 
-table, th, td {
- border: 1px;
+table td {
+ border-left: 1px solid black;
+ border-right: 1px solid black;
+ text-align: right;
 }
 
+table td:first-child {
+ border-left: none;
+}
+
+table td:last-child {
+ border-right: none;
+}
+
+table tr:nth-child(4) {
+ background: #f0e0e0;
+}
+table tr:nth-child(5) {
+ background: #f0f0f0;
+}
+table tr:nth-child(3) {
+ background: #d0e0f0;
+}
+
+table tr {
+ border-top: 1px solid black;
+ border-bottom: 1px solid black;
+}
+
+table tr:first-child {
+ border-top: none;
+ border-bottom: none;
+}
+
+table tr:nth-child(2) {
+ border-top: none;
+}
+
+table tr:last-child {
+ border-bottom: none;
+}
+
+
+td {
+  padding: 4px;
+}
+
+td.numbercell {
+ font-family: "Lucida Console", Monaco, monospace;
+ text-align: right;
+}
+
+td.headingcell {
+ text-align: center;
+}
 td.boldcell {
  font-weight: bold;
 }
